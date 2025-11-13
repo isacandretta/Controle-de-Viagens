@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Viagens - NO/DPF/PHB/PI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Tela de Login -->
+    <div id="login-screen" class="login-container">
+        <h1>Controle de Viagens</h1>
+        <h2>NO/DPF/PHB/PI</h2>
+        <form id="login-form">
+            <label>Usuário: <input type="text" id="usuario" required></label>
+            <label>Senha: <input type="password" id="senha" required></label>
+            <button type="submit">Entrar</button>
+        </form>
+        <p id="login-error" class="error"></p>
+    </div>
+
+    <!-- Painel Principal -->
+    <div id="main-screen" style="display:none;">
+        <header>
+            <img src="logo-pf.png" alt="Logo PF" class="logo">
+            <div>
+                <h1>Controle de Viagens</h1>
+                <h2>NO/DPF/PHB/PI</h2>
+            </div>
+            <button class="logout" onclick="logout()">Logout</button>
+        </header>
+
+        <main>
+            <section class="card">
+                <h3>Próxima Viagem</h3>
+                <p id="proxima-viagem">Nenhuma viagem cadastrada</p>
+            </section>
+
+            <section class="card">
+                <h3>Histórico de Viagens</h3>
+                <table>
+                    <thead>
+                        <tr><th>Destino</th><th>Data</th><th>Duração</th><th>Participantes</th></tr>
+                    </thead>
+                    <tbody id="historico"></tbody>
+                </table>
+            </section>
+
+            <section class="card">
+                <h3>Escala de Viagem</h3>
+                <table>
+                    <thead>
+                        <tr><th>Nome</th><th>Status</th></tr>
+                    </thead>
+                    <tbody id="escala"></tbody>
+                </table>
+            </section>
+
+            <section class="card">
+                <h3>Cadastrar Nova Viagem</h3>
+                <form id="form-viagem">
+                    <label>Destino: <input type="text" id="destino" required></label>
+                    <label>Data: <input type="date" id="data" required></label>
+                    <label>Duração (dias): <input type="number" id="duracao" required></label>
+                    <label>Quantidade de participantes: <input type="number" id="qtd" required></label>
+                    <button type="submit">Cadastrar</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
